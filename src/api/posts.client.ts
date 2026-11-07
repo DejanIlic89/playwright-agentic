@@ -24,4 +24,10 @@ export class PostsClient {
       data: payload,
     });
   }
+
+  updatePostTitle(postId: number, title: string): Promise<APIResponse> {
+    return this.request.patch(`/posts/${postId}`, {
+      data: { title },
+    });
+  }
 }
