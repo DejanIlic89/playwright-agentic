@@ -55,3 +55,15 @@ Use pnpm for package management.
 - Run typecheck and the affected tests after changes.
 - Report what changed, what was verified, and any remaining failures.
 - Never claim a check passed unless it was actually run.
+
+## Git workflow
+
+- Inspect git status before making changes.
+- Make changes on a dedicated branch, never directly on main.
+- Use feat/, fix/, or chore/ branch prefixes.
+- Preserve unrelated uncommitted changes.
+- Run type checking and affected tests for code changes.
+- Review the diff before committing.
+- Push changes and open pull requests only when explicitly requested.
+- Target main when opening pull requests.
+- Never merge a pull request unless explicitly requested.
