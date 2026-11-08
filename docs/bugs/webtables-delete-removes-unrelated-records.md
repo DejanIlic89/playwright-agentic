@@ -190,8 +190,8 @@ It is not rated Critical because:
 - Nothing crashes.
 - demoqa.com is a practice site, so real-world impact is limited.
 
-For this framework, any UI test that adds records and then deletes one will see
-the wrong rows.
+For this framework, tests that delete a record while other user-added records should remain
+may fail because unrelated records disappear.
 
 ## Scope and verification limitations
 
