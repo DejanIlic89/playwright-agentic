@@ -56,6 +56,10 @@ export class CheckBoxPage {
     await this.desktopExpandToggle.click();
   }
 
+  async collapseDesktop(): Promise<void> {
+    await this.desktopExpandToggle.click();
+  }
+
   async selectNotes(): Promise<void> {
     await this.notesCheckbox.click();
   }
