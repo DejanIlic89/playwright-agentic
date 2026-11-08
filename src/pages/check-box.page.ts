@@ -19,6 +19,14 @@ export class CheckBoxPage {
     return this.checkbox('Commands');
   }
 
+  get documentsCheckbox() {
+    return this.checkbox('Documents');
+  }
+
+  get downloadsCheckbox() {
+    return this.checkbox('Downloads');
+  }
+
   get homeNode() {
     return this.treeNode(this.homeCheckbox);
   }
@@ -58,6 +66,10 @@ export class CheckBoxPage {
 
   async collapseDesktop(): Promise<void> {
     await this.desktopExpandToggle.click();
+  }
+
+  async selectDesktop(): Promise<void> {
+    await this.desktopCheckbox.click();
   }
 
   async selectNotes(): Promise<void> {
