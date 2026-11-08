@@ -1,23 +1,24 @@
 import { test, expect } from '../../../src/fixtures/ui.fixture.js';
-import type { WebTableRecord } from '../../../src/pages/web-tables.page.js';
+import { createWebTableRecord } from '../../../src/data/web-table-record.factory.js';
+import type { WebTableRecord } from '../../../src/types/web-table-record.js';
 
-const alpha: WebTableRecord = {
+const alpha = createWebTableRecord({
   firstName: 'Alpha',
   lastName: 'Tester',
   email: 'alpha.tester@example.test',
   age: '28',
   salary: '3000',
   department: 'Engineering',
-};
+});
 
-const bravo: WebTableRecord = {
+const bravo = createWebTableRecord({
   firstName: 'Bravo',
   lastName: 'Tester',
   email: 'bravo.tester@example.test',
   age: '35',
   salary: '5000',
   department: 'Finance',
-};
+});
 
 const updatedDepartment = 'Quality Engineering';
 
