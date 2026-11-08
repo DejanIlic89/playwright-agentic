@@ -1,7 +1,7 @@
 ---
 name: add-ui-test
 description: Explore a UI scenario with Playwright MCP, implement it using this project's patterns, and run validation.
-argument-hint: "<page URL and scenario with expected results>"
+argument-hint: '<page URL and scenario with expected results>'
 disable-model-invocation: true
 ---
 
@@ -51,6 +51,7 @@ $ARGUMENTS
 ## Completion
 
 Report:
+
 - Files changed and the behavior covered.
 - Commands executed and their actual results.
 - Remaining failures, limitations, or unverified assumptions.

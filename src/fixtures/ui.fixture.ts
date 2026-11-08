@@ -15,7 +15,7 @@ export const test = base.extend<UiFixtures>({
 
     await use(checkBoxPage);
   },
-  
+
   textBoxPage: async ({ page }, use) => {
     const textBoxPage = new TextBoxPage(page);
 

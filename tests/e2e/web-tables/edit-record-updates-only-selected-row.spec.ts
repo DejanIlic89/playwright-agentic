@@ -33,7 +33,9 @@ const rowValues = (record: WebTableRecord) => [
   '',
 ];
 
-test('editing Bravo updates its department and preserves Alpha', async ({ webTablesPage }) => {
+test('editing Bravo updates its department and preserves Alpha', async ({
+  webTablesPage,
+}) => {
   await webTablesPage.open();
 
   for (const record of [bravo, alpha]) {

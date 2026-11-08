@@ -42,6 +42,8 @@ Use pnpm for package management.
 
 ## Commands
 
+- pnpm run format
+- pnpm run format:check
 - pnpm run typecheck
 - pnpm run test:e2e
 - pnpm run test:e2e:headed
@@ -52,7 +54,7 @@ Use pnpm for package management.
 
 - Inspect relevant files before making changes.
 - Follow existing patterns and keep changes focused.
-- Run typecheck and the affected tests after changes.
+- Run format:check, typecheck, and the affected tests after changes.
 - Report what changed, what was verified, and any remaining failures.
 - Never claim a check passed unless it was actually run.
 
@@ -62,8 +64,15 @@ Use pnpm for package management.
 - Make changes on a dedicated branch, never directly on main.
 - Use feat/, fix/, or chore/ branch prefixes.
 - Preserve unrelated uncommitted changes.
-- Run type checking and affected tests for code changes.
+- Run format:check, type checking, and affected tests for code changes.
 - Review the diff before committing.
 - Push changes and open pull requests only when explicitly requested.
 - Target main when opening pull requests.
 - Never merge a pull request unless explicitly requested.
+
+## Linting
+
+- ESLint is deferred. typescript-eslint supports only TypeScript <6.1,
+  and this project uses TypeScript 7, which has no JavaScript compiler API.
+- Revisit when typescript-eslint supports TypeScript 7
+  (typescript-eslint issue #10940).

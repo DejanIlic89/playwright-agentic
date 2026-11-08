@@ -1,7 +1,7 @@
 ---
 name: diagnose-test
 description: Investigate a failing Playwright UI or API test and report an evidence-based diagnosis without changing project files.
-argument-hint: "<test path, project, and optional error or artifact path>"
+argument-hint: '<test path, project, and optional error or artifact path>'
 disable-model-invocation: true
 ---
 
