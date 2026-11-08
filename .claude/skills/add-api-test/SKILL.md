@@ -1,7 +1,7 @@
 ---
 name: add-api-test
 description: Implement and validate an API test using this project's fixtures, clients, and schemas.
-argument-hint: "<HTTP method, endpoint, scenario, and expected results>"
+argument-hint: '<HTTP method, endpoint, scenario, and expected results>'
 disable-model-invocation: true
 ---
 
@@ -53,6 +53,7 @@ $ARGUMENTS
 ## Completion
 
 Report:
+
 - Files changed and the behavior covered.
 - Commands executed and their actual results.
 - Remaining failures, limitations, or unverified assumptions.

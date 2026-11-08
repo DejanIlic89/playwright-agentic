@@ -1,11 +1,11 @@
 # Web Tables: deleting a record removes all records added during the session
 
-| Field | Value |
-|---|---|
-| Status | Open (not reported to the site owner) |
-| Suggested severity | High (Major) |
-| Reproduction frequency | 8/8 applicable attempts |
-| Component | https://demoqa.com/webtables, Delete action |
+| Field                  | Value                                       |
+| ---------------------- | ------------------------------------------- |
+| Status                 | Open (not reported to the site owner)       |
+| Suggested severity     | High (Major)                                |
+| Reproduction frequency | 8/8 applicable attempts                     |
+| Component              | https://demoqa.com/webtables, Delete action |
 
 ## Summary
 
@@ -32,11 +32,11 @@ there is no undo.
 
 All data is synthetic.
 
-| First name | Last name | Email | Age | Salary | Department |
-|---|---|---|---|---|---|
-| Zorana | Testova | `zorana.alpha@test.com` | 31 | 4100 | AlphaDept |
-| Bojan | Probni | `bojan.beta@test.com` | 42 | 5200 | BetaDept |
-| Mira | Gamic | `mira.gamma@test.com` | 27 | 3300 | GammaDept |
+| First name | Last name | Email                   | Age | Salary | Department |
+| ---------- | --------- | ----------------------- | --- | ------ | ---------- |
+| Zorana     | Testova   | `zorana.alpha@test.com` | 31  | 4100   | AlphaDept  |
+| Bojan      | Probni    | `bojan.beta@test.com`   | 42  | 5200   | BetaDept   |
+| Mira       | Gamic     | `mira.gamma@test.com`   | 27  | 3300   | GammaDept  |
 
 Mira was added only in attempts A4 and A5.
 
@@ -81,17 +81,17 @@ the delete. The missing rows were not hidden by pagination or filtering.
 
 **8/8 applicable attempts.** Each attempt started from a fresh page load.
 
-| Attempt | Records added | Record deleted | Records remaining | Result |
-|---|---|---|---|---|
-| A1 | Zorana, Bojan | Zorana | 3 seeds only | Defect |
-| A2 | Zorana, Bojan | Zorana | 3 seeds only | Defect |
-| A3 | Zorana, Bojan | Bojan | 3 seeds only | Defect |
-| A4 | Zorana, Bojan, Mira | Bojan | 3 seeds only | Defect |
-| A5 | Zorana, Bojan, Mira | Zorana | 3 seeds only | Defect |
-| A6 | Zorana | Zorana | 3 seeds only | Control (correct visible result) |
-| B1 | Zorana, Bojan | Alden | Cierra, Kierra | Defect |
-| B2 | Zorana, Bojan | Cierra | Alden, Kierra | Defect |
-| B3 | Zorana, Bojan | Kierra | Cierra, Alden | Defect |
+| Attempt | Records added       | Record deleted | Records remaining | Result                           |
+| ------- | ------------------- | -------------- | ----------------- | -------------------------------- |
+| A1      | Zorana, Bojan       | Zorana         | 3 seeds only      | Defect                           |
+| A2      | Zorana, Bojan       | Zorana         | 3 seeds only      | Defect                           |
+| A3      | Zorana, Bojan       | Bojan          | 3 seeds only      | Defect                           |
+| A4      | Zorana, Bojan, Mira | Bojan          | 3 seeds only      | Defect                           |
+| A5      | Zorana, Bojan, Mira | Zorana         | 3 seeds only      | Defect                           |
+| A6      | Zorana              | Zorana         | 3 seeds only      | Control (correct visible result) |
+| B1      | Zorana, Bojan       | Alden          | Cierra, Kierra    | Defect                           |
+| B2      | Zorana, Bojan       | Cierra         | Alden, Kierra     | Defect                           |
+| B3      | Zorana, Bojan       | Kierra         | Cierra, Alden     | Defect                           |
 
 A1 was performed step by step through the browser. A2–A6 and B1–B3 were run
 with a Playwright script that performed the same clicks and form fills through

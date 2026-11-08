@@ -10,7 +10,9 @@ const record = createWebTableRecord({
   department: 'Quality Assurance',
 });
 
-test('adding a valid record displays all submitted values', async ({ webTablesPage }) => {
+test('adding a valid record displays all submitted values', async ({
+  webTablesPage,
+}) => {
   await webTablesPage.open();
   const initialRecordCount = await webTablesPage.populatedRows.count();
 

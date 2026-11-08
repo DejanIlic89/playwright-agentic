@@ -9,7 +9,9 @@
     "test:e2e:headed": "playwright test --project=e2e --headed",
     "test:api": "playwright test --project=api",
     "typecheck": "tsc --noEmit",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,7 @@
   "devDependencies": {
     "@playwright/test": "^1.65.0",
     "@types/node": "^26.6.6",
+    "prettier": "3.9.10",
     "typescript": "^7.0.2",
     "zod": "^4.6.7"
   }

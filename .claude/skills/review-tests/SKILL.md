@@ -1,7 +1,7 @@
 ---
 name: review-tests
 description: Review test changes for correctness, reliability, and adherence to project conventions without modifying files.
-argument-hint: "[review scope, defaults to changes against origin/main]"
+argument-hint: '[review scope, defaults to changes against origin/main]'
 disable-model-invocation: true
 ---
 
@@ -30,6 +30,7 @@ If no scope is given, review the current branch against origin/main.
 ## Review
 
 Check:
+
 - Whether assertions cover the requested behavior.
 - Missing assertions and false-positive risks.
 - Locator uniqueness and stability.

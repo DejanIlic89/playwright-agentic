@@ -30,20 +30,28 @@ export class WebTablesPage {
 
   // The dialog has no accessible name, so it is identified by its title text.
   get registrationDialog() {
-    return this.page.getByRole('dialog').filter({ hasText: 'Registration Form' });
+    return this.page
+      .getByRole('dialog')
+      .filter({ hasText: 'Registration Form' });
   }
 
   // The form labels are not associated with their inputs, so placeholders are used.
   get firstNameInput() {
-    return this.registrationDialog.getByPlaceholder('First Name', { exact: true });
+    return this.registrationDialog.getByPlaceholder('First Name', {
+      exact: true,
+    });
   }
 
   get lastNameInput() {
-    return this.registrationDialog.getByPlaceholder('Last Name', { exact: true });
+    return this.registrationDialog.getByPlaceholder('Last Name', {
+      exact: true,
+    });
   }
 
   get emailInput() {
-    return this.registrationDialog.getByPlaceholder('name@example.com', { exact: true });
+    return this.registrationDialog.getByPlaceholder('name@example.com', {
+      exact: true,
+    });
   }
 
   get ageInput() {
@@ -55,7 +63,9 @@ export class WebTablesPage {
   }
 
   get departmentInput() {
-    return this.registrationDialog.getByPlaceholder('Department', { exact: true });
+    return this.registrationDialog.getByPlaceholder('Department', {
+      exact: true,
+    });
   }
 
   get submitButton() {
