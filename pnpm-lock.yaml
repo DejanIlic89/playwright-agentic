@@ -172,6 +172,9 @@ importers:
       '@types/node':
         specifier: ^26.6.6
         version: 26.6.6
+      dotenv:
+        specifier: 18.0.9
+        version: 18.0.9
       prettier:
         specifier: 3.9.10
         version: 3.9.10
@@ -312,6 +315,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  dotenv@18.0.9:
+    resolution: {integrity: sha512-3fVOW4cB02R066PUSwn8O4TJyz9NckQl7F81blIbaq9jKBm2tSmOKky7ZHIXzGvkVPXCSn6jkpziBPZdGFs8Tw==}
+    engines: {node: '>=12'}
+    hasBin: true
+
   playwright-core@1.65.0:
     resolution: {integrity: sha512-vNSKgH6YqtN7cdT/L334zo0a+YwkrpicyrHJlWWPIm/Q+Nn2SWInil01oT0mbu96U4GgoRtCYQD9CzJQgju+lA==}
     engines: {node: '>=20'}
@@ -407,6 +415,8 @@ snapshots:
 
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
+
+  dotenv@18.0.9: {}
 
   playwright-core@1.65.0: {}
 

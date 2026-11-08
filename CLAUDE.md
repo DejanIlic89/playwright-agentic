@@ -17,6 +17,7 @@ Use pnpm for package management.
 - src/api/: API clients.
 - src/fixtures/: custom Playwright fixtures.
 - src/schemas/: Zod response schemas.
+- src/config/env.ts: validated environment configuration (base URLs).
 
 ## Conventions
 

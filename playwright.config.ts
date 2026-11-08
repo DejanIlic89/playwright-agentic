@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { env } from './src/config/env.js';
 
 export default defineConfig({
   testDir: './tests',
@@ -21,14 +22,14 @@ export default defineConfig({
       testDir: './tests/e2e',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: 'https://demoqa.com',
+        baseURL: env.uiBaseUrl,
       },
     },
     {
       name: 'api',
       testDir: './tests/api',
       use: {
-        baseURL: 'https://jsonplaceholder.typicode.com',
+        baseURL: env.apiBaseUrl,
       },
     },
   ],
