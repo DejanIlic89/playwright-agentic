@@ -30,4 +30,8 @@ export class PostsClient {
       data: { title },
     });
   }
+
+  deletePost(postId: number): Promise<APIResponse> {
+    return this.request.delete(`/posts/${postId}`);
+  }
 }
