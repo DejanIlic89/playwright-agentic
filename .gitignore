@@ -10,6 +10,8 @@ node_modules/
 
 .idea
 .env
+.env.*
+!.env.example
 dist/
 
 .claude/settings.local.json
