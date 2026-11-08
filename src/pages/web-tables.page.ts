@@ -104,4 +104,13 @@ export class WebTablesPage {
   cellsOf(row: Locator): Locator {
     return row.getByRole('cell');
   }
+
+  // The Edit control is a span with a title attribute and no button role.
+  editButtonOf(row: Locator): Locator {
+    return row.getByTitle('Edit', { exact: true });
+  }
+
+  async openEditDialog(row: Locator): Promise<void> {
+    await this.editButtonOf(row).click();
+  }
 }
