@@ -1,13 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-
-export type WebTableRecord = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  age: string;
-  salary: string;
-  department: string;
-};
+import type { WebTableRecord } from '../types/web-table-record.js';
 
 export class WebTablesPage {
   constructor(private readonly page: Page) {}

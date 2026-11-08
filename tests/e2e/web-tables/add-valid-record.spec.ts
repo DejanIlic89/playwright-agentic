@@ -1,14 +1,14 @@
 import { test, expect } from '../../../src/fixtures/ui.fixture.js';
-import type { WebTableRecord } from '../../../src/pages/web-tables.page.js';
+import { createWebTableRecord } from '../../../src/data/web-table-record.factory.js';
 
-const record: WebTableRecord = {
+const record = createWebTableRecord({
   firstName: 'Taylor',
   lastName: 'Morgan',
   email: 'taylor.morgan@example.test',
   age: '31',
   salary: '4500',
   department: 'Quality Assurance',
-};
+});
 
 test('adding a valid record displays all submitted values', async ({ webTablesPage }) => {
   await webTablesPage.open();
