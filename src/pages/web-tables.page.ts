@@ -11,6 +11,10 @@ export class WebTablesPage {
     });
   }
 
+  get searchInput() {
+    return this.page.getByPlaceholder('Type to search', { exact: true });
+  }
+
   get table() {
     return this.page.getByRole('table');
   }
