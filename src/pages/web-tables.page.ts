@@ -116,6 +116,11 @@ export class WebTablesPage {
     return row.getByTitle('Edit', { exact: true });
   }
 
+  // The Delete control is a span with a title attribute and no button role.
+  deleteButtonOf(row: Locator): Locator {
+    return row.getByTitle('Delete', { exact: true });
+  }
+
   async openEditDialog(row: Locator): Promise<void> {
     await this.editButtonOf(row).click();
   }
