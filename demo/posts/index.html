@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post viewer</title>
+  </head>
+  <body>
+    <main>
+      <h1>Post viewer</h1>
+      <button type="button" id="load-post">Load post</button>
+      <p id="status" role="status"></p>
+      <section id="result"></section>
+      <div id="error"></div>
+    </main>
+
+    <script>
+      const POST_URL = 'https://jsonplaceholder.typicode.com/posts/1';
+
+      const button = document.getElementById('load-post');
+      const status = document.getElementById('status');
+      const result = document.getElementById('result');
+      const error = document.getElementById('error');
+
+      function showError() {
+        const alert = document.createElement('p');
+        alert.setAttribute('role', 'alert');
+        alert.textContent = 'Unable to load post';
+        error.replaceChildren(alert);
+      }
+
+      async function loadPost() {
+        result.replaceChildren();
+        error.replaceChildren();
+        status.textContent = 'Loading...';
+        button.disabled = true;
+
+        try {
+          const response = await fetch(POST_URL);
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          const post = await response.json();
+
+          const title = document.createElement('h2');
+          title.textContent = post.title;
+          result.replaceChildren(title);
+        } catch {
+          showError();
+        } finally {
+          status.textContent = '';
+          button.disabled = false;
+        }
+      }
+
+      button.addEventListener('click', loadPost);
+    </script>
+  </body>
+</html>

@@ -8,10 +8,12 @@
     "test:e2e": "playwright test --project=e2e",
     "test:e2e:headed": "playwright test --project=e2e --headed",
     "test:api": "playwright test --project=api",
+    "test:mocking": "playwright test --project=mocking",
     "typecheck": "tsc --noEmit",
     "report": "playwright show-report",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "demo:start": "node demo/server.mjs"
   },
   "keywords": [],
   "author": "",

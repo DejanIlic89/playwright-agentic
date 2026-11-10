@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [api, e2e]
+        project: [api, e2e, mocking]
 
     steps:
       - name: Checkout repository
@@ -45,7 +45,7 @@ jobs:
         run: pnpm run typecheck
 
       - name: Install Chromium
-        if: matrix.project == 'e2e'
+        if: matrix.project != 'api'
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run tests
