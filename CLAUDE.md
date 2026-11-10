@@ -13,6 +13,10 @@ Use pnpm for package management.
 
 - tests/e2e/: UI tests.
 - tests/api/: API tests.
+- tests/mocking/: UI tests against the local demo app (demo/) with mocked
+  API responses, run by the mocking project.
+- demo/: local demo app served on http://127.0.0.1:4173 by Playwright's
+  webServer.
 - src/pages/: page objects.
 - src/api/: API clients.
 - src/fixtures/: custom Playwright fixtures.
@@ -25,11 +29,13 @@ Use pnpm for package management.
 - Use one scenario per spec file.
 - Parameterize cases that exercise the same scenario.
 - Use the existing custom fixtures for UI and API tests.
+- Exception: the small standalone demo tests in tests/mocking/ may use
+  built-in Playwright fixtures (for example, page) directly.
 - Reuse existing page objects, API clients, and schemas.
 - Define page object locators with getters.
 - Keep business assertions in tests.
 - Use only Chromium for UI tests.
-- Keep the Playwright project names: e2e and api.
+- Keep the Playwright project names: e2e, api, and mocking.
 
 ## Test reliability
 
@@ -49,6 +55,7 @@ Use pnpm for package management.
 - pnpm run test:e2e
 - pnpm run test:e2e:headed
 - pnpm run test:api
+- pnpm run test:mocking
 - pnpm run report
 
 ## Working process

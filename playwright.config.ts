@@ -32,5 +32,20 @@ export default defineConfig({
         baseURL: env.apiBaseUrl,
       },
     },
+    {
+      name: 'mocking',
+      testDir: './tests/mocking',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'http://127.0.0.1:4173',
+      },
+    },
   ],
+
+  webServer: {
+    command: 'pnpm run demo:start',
+    url: 'http://127.0.0.1:4173',
+    // Always start this checkout's demo server instead of reusing another one.
+    reuseExistingServer: false,
+  },
 });
