@@ -48,3 +48,10 @@ the post title. It does not verify the real API; the `api` project covers that.
 The current shared configuration defines one top-level `webServer`, so
 Playwright starts the local demo server for every project, including `e2e` and
 `api`. Port 4173 must be available for any test run.
+
+## Test planning and coverage
+
+- [Post viewer test plan](docs/test-plans/post-viewer.md): scenarios for the
+  mocking demo.
+- [Coverage overview](docs/coverage.md): scenario coverage status. It
+  currently covers only the Post viewer.

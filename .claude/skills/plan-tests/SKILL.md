@@ -46,9 +46,33 @@ Keep plans focused:
 - Do not propose abstractions without a concrete need.
 - Identify known application defects separately.
 
+## Scenario IDs
+
+- Scenario IDs are global across all plans: `TC-001`, `TC-002`, and so on.
+- Before assigning IDs, inspect `docs/test-plans/` and `docs/coverage.md`
+  for IDs already in use.
+- Reuse the existing ID for a scenario that is already documented.
+- Assign the next unused number to a new scenario.
+- Never renumber existing scenarios or reuse retired IDs.
+
+## Output
+
+- By default, return the plan in the conversation only.
+- Save the plan only when explicitly asked. Then write only:
+  - the relevant `docs/test-plans/<feature>.md` document, and
+  - the related entries in `docs/coverage.md`.
+- In `docs/coverage.md`, use the statuses Planned, Implemented, and Blocked.
+- Do not mark a scenario Implemented without inspecting its test assertions.
+  Implemented means coverage exists in code, not that a run passed.
+- Do not record execution results or coverage percentages.
+- Mark proposed scenarios that lack an agreed requirement as proposed and
+  requiring acceptance.
+
 ## Constraints
 
-1. Do not modify application or test code.
-2. Do not execute tests.
-3. Do not commit, push, or open a pull request.
-4. Planning does not authorize implementation.
+1. Do not write or modify any file, except the documentation allowed by
+   the Output section when explicitly asked to save a plan.
+2. Do not modify application or test code.
+3. Do not execute tests.
+4. Do not commit, push, or open a pull request, or make other remote writes.
+5. Planning does not authorize implementation.
