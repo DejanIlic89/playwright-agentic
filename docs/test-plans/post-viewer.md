@@ -88,24 +88,18 @@ for it was found. It is documented here as planned, not implemented.
 
 Not asserted: the loading state for a request that ends in an error.
 
-### TC-005 (proposed)
+### TC-005
 
-**Status: Proposed. Requires acceptance before implementation.** This is not
-an agreed requirement.
+| Field              | Value                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title              | Successfully loads a post after an HTTP error                                                                                                                                                                                                                                                                                                                                                   |
+| Requirement source | Proposed in the 2026-11-20 planning request as "Clears the previous error after a successful retry". Accepted, with acceptance criteria, in the 2026-11-26 implementation request, which settled the open decisions: the first failure is HTTP 500 only, and the error must be hidden once the retry succeeds. Expected results come from those acceptance criteria and match current behavior. |
+| Preconditions      | The post request is intercepted before navigation. The first request returns HTTP 500; the second returns HTTP 200. The page is loaded at `/` once and is not reloaded between attempts.                                                                                                                                                                                                        |
+| Test data          | First request: HTTP 500 with a valid post body (`title: 'This title must not be displayed'`). Second request: HTTP 200 with `{ id: 1, userId: 1, title: 'Post loaded after retry', body: 'Controlled successful response for the second attempt.' }`.                                                                                                                                           |
+| Actions            | 1. Open the page. 2. Click **Load post**. 3. Check the error state. 4. Click the same **Load post** button again.                                                                                                                                                                                                                                                                               |
+| Expected results   | After the first click: an alert is visible with the text `Unable to load post`, no level-2 heading, button enabled, status region empty. After the second click: a level-2 heading named exactly `Post loaded after retry` is visible, the alert is hidden, button enabled, status region empty. Exactly two intercepted requests, both `GET`.                                                  |
+| Implementation     | [`successfully-loads-post-after-http-error.spec.ts`](../../tests/mocking/posts/successfully-loads-post-after-http-error.spec.ts)                                                                                                                                                                                                                                                                |
 
-| Field              | Value                                                                                                                                                                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Title              | Clears the previous error after a successful retry                                                                                                                                                                                   |
-| Requirement source | Proposed in the 2026-11-20 planning request. Not accepted. The demo currently clears the error at the start of each load, but that is observed behavior, not a requirement.                                                          |
-| Preconditions      | The post request is intercepted before navigation. The first request fails; the second succeeds. The page is loaded at `/`.                                                                                                          |
-| Test data          | First request: HTTP 500 with a valid post body. Second request: HTTP 200 with a post whose title differs from the first body.                                                                                                        |
-| Actions            | 1. Open the page. 2. Click **Load post**. 3. Wait for the error alert. 4. Click **Load post** again.                                                                                                                                 |
-| Expected results   | After the first click: the alert `Unable to load post` is visible. After the second click: no alert, a level-2 heading with the second response's title is visible, button enabled, status region empty. Exactly two `GET` requests. |
-| Implementation     | None. Do not implement until accepted.                                                                                                                                                                                               |
-
-Open decisions for acceptance:
-
-- Whether the first failure should be HTTP 500, a network failure, or both
-  (parameterized).
-- Whether the error must disappear as soon as the retry starts, or only once
-  the retry succeeds.
+Not asserted: whether the error disappears as soon as the retry starts (only
+its absence after success is checked), and a network failure as the first
+attempt.
